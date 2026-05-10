@@ -2,7 +2,7 @@
 
 ## Repository type
 
-**Hybrid design-spec + active codebase**. The repo contains authoritative planning docs (`prd.md`, `implementation-plan.md`, `high-level-agent-orchestration.md`) *and* a runnable FastAPI + Next.js MVP. Do not treat it as a spec-only repo.
+**Hybrid design-spec + active codebase**. The repo contains authoritative planning docs (`prd.md`, `implementation-plan.md`, `high-level-agent-orchestration.md`) _and_ a runnable FastAPI + Next.js MVP. Do not treat it as a spec-only repo.
 
 ## Project
 
@@ -17,14 +17,14 @@
 
 ## Authoritative sources
 
-| File | What it contains |
-|------|-----------------|
-| `prd.md` | Product requirements, user flows, MVP scope, suggested stack |
-| `implementation-plan.md` | Phased implementation plan (0–7), service boundaries, exit criteria |
+| File                                | What it contains                                                    |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| `prd.md`                            | Product requirements, user flows, MVP scope, suggested stack        |
+| `implementation-plan.md`            | Phased implementation plan (0–7), service boundaries, exit criteria |
 | `high-level-agent-orchestration.md` | **Exact agent prompts and data contracts** — treat as authoritative |
-| `design-principles.md` | UI/UX principles, three-panel layout, evidence-first UX |
-| `assets/sample_patents/` | Two real patent PDFs for testing/evaluation |
-| `core/schemas.py` | Canonical Pydantic models — must mirror data contracts above |
+| `design-principles.md`              | UI/UX principles, three-panel layout, evidence-first UX             |
+| `assets/sample_patents/`            | Two real patent PDFs for testing/evaluation                         |
+| `core/schemas.py`                   | Canonical Pydantic models — must mirror data contracts above        |
 
 ## Tech stack & entrypoints
 
@@ -76,16 +76,16 @@ No root-level `package.json` or `pyproject.toml`. Backend deps are in `api/requi
 
 ## Key developer commands
 
-| Task | Command |
-|------|---------|
-| Boot everything | `./start.sh` |
-| Boot DB only | `cd infra && docker-compose up -d` |
-| Boot backend only | `cd api && uvicorn main:app --reload --port 8000` |
-| Boot frontend only | `cd web && npm run dev` |
-| Run backend tests | `cd api && pytest` |
-| Frontend lint | `cd web && npm run lint` |
-| API docs | http://localhost:8000/docs |
-| Health check | http://localhost:8000/health |
+| Task               | Command                                           |
+| ------------------ | ------------------------------------------------- |
+| Boot everything    | `./start.sh`                                      |
+| Boot DB only       | `cd infra && docker-compose up -d`                |
+| Boot backend only  | `cd api && uvicorn main:app --reload --port 8000` |
+| Boot frontend only | `cd web && npm run dev`                           |
+| Run backend tests  | `cd api && pytest`                                |
+| Frontend lint      | `cd web && npm run lint`                          |
+| API docs           | http://localhost:8000/docs                        |
+| Health check       | http://localhost:8000/health                      |
 
 ## Environment
 
@@ -107,10 +107,3 @@ Every conclusion must include source document, exact quote, and chunk/section lo
 
 - `core/schemas.py` defines the canonical models (`Claim`, `Chunk`, `DiffResult`, `Citation`, `AuditFinding`, etc.).
 - Any change to agent output shapes must be reflected in both `high-level-agent-orchestration.md` and `core/schemas.py`.
-
-## What not to do
-
-- Do not treat this as an active codebase with CI/tests. There is no CI and tests are minimal.
-- Do not deviate from the agent prompts or data contracts without updating `high-level-agent-orchestration.md`.
-- Do not add features beyond the two-document MVP scope without updating `prd.md` first.
-- Do not run `npm` or `pytest` from the repo root — they are package-specific.
