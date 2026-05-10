@@ -1,6 +1,24 @@
 # Patent Diff Analyzer
 
-MVP tool that compares two patents and produces a structured, citation-backed analysis of overlap, novelty, and infringement risk.
+A tool that compares two patents and produces a structured, citation-backed analysis of overlap, novelty, and infringement risk.
+
+## Screenshots & demo
+
+**Home**
+
+![Patent Diff Analyzer — home screen](assets/snaps/PatentDiffAnalyzer_home.jpeg)
+
+**Analysis**
+
+![Patent Diff Analyzer — analysis view](assets/snaps/PatentDiffAnalyzer_analysis.jpeg)
+
+**Audits**
+
+![Patent Diff Analyzer — audits view](assets/snaps/PatentDiffAnalyzer_audits.jpeg)
+
+**Walkthrough video:** [`assets/PatentDiffAnalyzer_Demo.mp4`](assets/PatentDiffAnalyzer_Demo.mp4)
+
+<video src="assets/PatentDiffAnalyzer_Demo.mp4" controls width="100%"></video>
 
 ## Architecture
 
@@ -53,6 +71,7 @@ cp .env.example .env
 ```
 
 This will:
+
 - Start PostgreSQL + pgvector in Docker
 - Create a Python virtual environment
 - Install backend dependencies
@@ -68,12 +87,14 @@ This will:
 ### Manual Start (Alternative)
 
 **Database:**
+
 ```bash
 cd infra
 docker-compose up -d
 ```
 
 **Backend:**
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -83,6 +104,7 @@ uvicorn main:app --reload --port 8000
 ```
 
 **Frontend:**
+
 ```bash
 cd web
 npm install
@@ -139,14 +161,17 @@ patent-diff-analyzer/
 ## API Endpoints
 
 ### Documents
+
 - `POST /api/v1/documents/upload?label=Patent+A` — Upload a document
 - `GET /api/v1/documents/{document_id}` — Get document details
 
 ### Analysis
+
 - `POST /api/v1/analysis/start` — Start analysis (accepts `{patent_a_id, patent_b_id}`)
 - `GET /api/v1/analysis/{job_id}` — Get analysis status and results
 
 ### Audit
+
 - `POST /api/v1/audit/{job_id}` — Run audit on completed analysis
 
 ## Data Contracts
@@ -163,6 +188,7 @@ Key schemas defined in `core/schemas.py`:
 ## Citation Rules
 
 Every conclusion must include:
+
 - Source document ID and label
 - Exact quote from the text
 - Chunk ID and section location
@@ -194,16 +220,16 @@ pytest
 
 ## Implementation Status
 
-| Phase | Status | Description |
-|-------|--------|-------------|
-| 0 | ✅ Done | Foundation (schemas, repo layout, observability) |
-| 1 | ✅ Done | Document intake and processing |
-| 2 | ✅ Done | Claim extraction and structuring |
-| 3 | ✅ Done | Retrieval and similarity layer |
-| 4 | ✅ Done | Reasoning and structured diff output |
-| 5 | ✅ Done | Audit mode |
-| 6 | ✅ Done | MVP UI and UX |
-| 7 | 🔄 Next | Hardening, evaluation, and metrics |
+| Phase | Status  | Description                                      |
+| ----- | ------- | ------------------------------------------------ |
+| 0     | ✅ Done | Foundation (schemas, repo layout, observability) |
+| 1     | ✅ Done | Document intake and processing                   |
+| 2     | ✅ Done | Claim extraction and structuring                 |
+| 3     | ✅ Done | Retrieval and similarity layer                   |
+| 4     | ✅ Done | Reasoning and structured diff output             |
+| 5     | ✅ Done | Audit mode                                       |
+| 6     | ✅ Done | MVP UI and UX                                    |
+| 7     | 🔄 Next | Hardening, evaluation, and metrics               |
 
 ## License
 
