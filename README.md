@@ -16,9 +16,9 @@ A tool that compares two patents and produces a structured, citation-backed anal
 
 ![Patent Diff Analyzer — audits view](assets/snaps/PatentDiffAnalyzer_audits.jpeg)
 
-**Walkthrough video:** [`assets/PatentDiffAnalyzer_Demo.mp4`](assets/PatentDiffAnalyzer_Demo.mp4)
+**Walkthrough video:** 
 
-<video src="assets/PatentDiffAnalyzer_Demo.mp4" controls width="100%"></video>
+https://github.com/user-attachments/assets/e1bdd07b-c274-43bb-a875-1e4cd3c99695
 
 ## Architecture
 
