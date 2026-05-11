@@ -8,7 +8,7 @@
 
 **Patent Diff Analyzer** (Stilta App) — compares two patents and produces a structured, citation-backed analysis of overlap, novelty, and infringement risk.
 
-## Architecture (not obvious from filenames)
+## Architecture
 
 - **Directed pipeline with 7 agents**, each outputting strict JSON. Not a generic chatbot.
 - Agents must not free-form leak between stages. The exact prompts in `high-level-agent-orchestration.md` encode this.

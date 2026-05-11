@@ -16,7 +16,7 @@ A tool that compares two patents and produces a structured, citation-backed anal
 
 ![Patent Diff Analyzer — audits view](assets/snaps/PatentDiffAnalyzer_audits.jpeg)
 
-**Walkthrough video:** 
+**Walkthrough video:**
 
 https://github.com/user-attachments/assets/e1bdd07b-c274-43bb-a875-1e4cd3c99695
 
@@ -217,19 +217,6 @@ pytest
 2. Add router in `api/routers/`
 3. Include router in `api/main.py`
 4. Update `core/schemas.py` if data contracts change
-
-## Implementation Status
-
-| Phase | Status  | Description                                      |
-| ----- | ------- | ------------------------------------------------ |
-| 0     | ✅ Done | Foundation (schemas, repo layout, observability) |
-| 1     | ✅ Done | Document intake and processing                   |
-| 2     | ✅ Done | Claim extraction and structuring                 |
-| 3     | ✅ Done | Retrieval and similarity layer                   |
-| 4     | ✅ Done | Reasoning and structured diff output             |
-| 5     | ✅ Done | Audit mode                                       |
-| 6     | ✅ Done | MVP UI and UX                                    |
-| 7     | 🔄 Next | Hardening, evaluation, and metrics               |
 
 ## License
 
